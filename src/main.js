@@ -56,30 +56,16 @@ window.onbeforeunload = () => {
   localStorage.setItem('x', string)
 }
 
-let c = 0
-let d = 0
-
-$('input').on('click', () => {
-  if (c === 0) c = 1
-  if (d === 1) d = 0
-  console.log('input: c=' + c, 'd=' + d)
-})
-$(document).on('click', () => {
-  if (d == 0 && c == 1) d = 1
-  else {
-    d = 0
-    c = 0
-  }
-  console.log('document: c=' + c, 'd=' + d)
-})
 $(document).on('keypress', e => {
   const { key } = e
   //相当于 const key = e.key
-  if (d === 0) {
-    for (let i = 0; i < hashMap.length; i++) {
-      if (hashMap[i].logo.toLowerCase() === key) {
-        window.open(hashMap[i].url)
-      }
+  for (let i = 0; i < hashMap.length; i++) {
+    if (hashMap[i].logo.toLowerCase() === key) {
+      window.open(hashMap[i].url)
     }
   }
+})
+
+$('input').on('keypress', e => {
+  e.stopPropagation()
 })
