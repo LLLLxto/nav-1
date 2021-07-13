@@ -46,11 +46,28 @@ window.onbeforeunload = ()=>{
     const string = JSON.stringify($3920c17d9f5276c54162013f7118516f$var$hashMap);
     localStorage.setItem('x', string);
 };
+let $3920c17d9f5276c54162013f7118516f$var$c = 0;
+let $3920c17d9f5276c54162013f7118516f$var$d = 0;
+$('input').on('click', ()=>{
+    if ($3920c17d9f5276c54162013f7118516f$var$c === 0) $3920c17d9f5276c54162013f7118516f$var$c = 1;
+    if ($3920c17d9f5276c54162013f7118516f$var$d === 1) $3920c17d9f5276c54162013f7118516f$var$d = 0;
+    console.log('input: c=' + $3920c17d9f5276c54162013f7118516f$var$c, 'd=' + $3920c17d9f5276c54162013f7118516f$var$d);
+});
+$(document).on('click', ()=>{
+    if ($3920c17d9f5276c54162013f7118516f$var$d == 0 && $3920c17d9f5276c54162013f7118516f$var$c == 1) $3920c17d9f5276c54162013f7118516f$var$d = 1;
+    else {
+        $3920c17d9f5276c54162013f7118516f$var$d = 0;
+        $3920c17d9f5276c54162013f7118516f$var$c = 0;
+    }
+    console.log('document: c=' + $3920c17d9f5276c54162013f7118516f$var$c, 'd=' + $3920c17d9f5276c54162013f7118516f$var$d);
+});
 $(document).on('keypress', (e)=>{
     const { key: key  } = e;
     //相当于 const key = e.key
-    for(let i = 0; i < $3920c17d9f5276c54162013f7118516f$var$hashMap.length; i++)if ($3920c17d9f5276c54162013f7118516f$var$hashMap[i].logo.toLowerCase() === key) window.open($3920c17d9f5276c54162013f7118516f$var$hashMap[i].url);
+    if ($3920c17d9f5276c54162013f7118516f$var$d === 0) {
+        for(let i = 0; i < $3920c17d9f5276c54162013f7118516f$var$hashMap.length; i++)if ($3920c17d9f5276c54162013f7118516f$var$hashMap[i].logo.toLowerCase() === key) window.open($3920c17d9f5276c54162013f7118516f$var$hashMap[i].url);
+    }
 });
 
 })();
-//# sourceMappingURL=index.8213f12c.js.map
+//# sourceMappingURL=index.7881d9ed.js.map
