@@ -5,7 +5,7 @@ const x = localStorage.getItem('x')
 const xObject = JSON.parse(x)
 
 const hashMap = xObject || [
-  { logo: 'A', url: 'https://www.acfun.cn' },
+  { logo: 'Y', url: 'https://www.yuque.com/zhilengtu' },
   { logo: 'B', url: 'https://bilibili.com' }
 ]
 

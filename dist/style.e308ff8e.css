@@ -25,14 +25,14 @@ img {
 
 /* style */
 body{
-  background-image: url("./mobile.jpg");
+  background-image: url("/mobile.965f3fb2.jpg");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 @media(min-width:500px){
   body{
-    background-image: url("./pc.jpg");
+    background-image: url("/pc.1e32f7bc.jpg");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -180,3 +180,6 @@ body{
   font-size: 14px;
   margin-top: 4px; /* 加个与 logo 之间的间距 */
 }
+
+
+/*# sourceMappingURL=/style.e308ff8e.css.map */
