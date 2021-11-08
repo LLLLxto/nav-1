@@ -120,14 +120,20 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 })({"main.js":[function(require,module,exports) {
 var $siteList = $('.siteList');
 var $lastLi = $siteList.find('li.last');
-var x = localStorage.getItem('x');
-var xObject = JSON.parse(x);
+var siteList = localStorage.getItem('siteList');
+var xObject = JSON.parse(siteList);
 var hashMap = xObject || [{
   logo: 'Y',
   url: 'https://www.yuque.com/zhilengtu'
 }, {
-  logo: 'B',
-  url: 'https://bilibili.com'
+  logo: 'G',
+  url: 'https://google.com'
+}, {
+  logo: 'M',
+  url: 'https://developer.mozilla.org/zh-CN/'
+}, {
+  logo: 'Z',
+  url: 'https://zhihu.com'
 }];
 
 var simplifyUrl = function simplifyUrl(url) {
@@ -168,7 +174,7 @@ $('.addButton').on('click', function () {
 
 window.onbeforeunload = function () {
   var string = JSON.stringify(hashMap);
-  localStorage.setItem('x', string);
+  localStorage.setItem('siteList', string);
 };
 
 $(document).on('keypress', function (e) {
@@ -211,7 +217,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57027" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57542" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

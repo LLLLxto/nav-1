@@ -1,12 +1,14 @@
 const $siteList = $('.siteList')
 const $lastLi = $siteList.find('li.last')
 
-const x = localStorage.getItem('x')
-const xObject = JSON.parse(x)
+const siteList = localStorage.getItem('siteList')
+const xObject = JSON.parse(siteList)
 
 const hashMap = xObject || [
   { logo: 'Y', url: 'https://www.yuque.com/zhilengtu' },
-  { logo: 'B', url: 'https://bilibili.com' }
+  { logo: 'G', url: 'https://google.com' },
+  { logo: 'M', url: 'https://developer.mozilla.org/zh-CN/' },
+  { logo: 'Z', url: 'https://zhihu.com' },
 ]
 
 const simplifyUrl = url => {
@@ -53,7 +55,7 @@ $('.addButton').on('click', () => {
 
 window.onbeforeunload = () => {
   const string = JSON.stringify(hashMap)
-  localStorage.setItem('x', string)
+  localStorage.setItem('siteList', string)
 }
 
 $(document).on('keypress', e => {
